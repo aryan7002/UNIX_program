@@ -1,0 +1,17 @@
+clear
+echo "enter the file name"
+read file
+if [ -f $file ]
+then
+set -- `ls -l $file`
+echo "file -permission=> $1"
+echo " number of line=> $2"
+echo "username=> $3"
+echo "group name=> $4"
+echo "blocksize=> $5"
+echo "date of modification => $7"
+echo "time of modification =>$8"
+echo "filename=> $9"
+else 
+echo "file dosenot exist"
+fi

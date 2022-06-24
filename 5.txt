@@ -1,0 +1,6 @@
+clear
+if [ $# -lt 3 ]
+then 
+echo "pass file name starting and ending line numbers as arguments"
+fi
+sed -n "$2,$3p" "$1"                          

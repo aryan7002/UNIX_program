@@ -1,0 +1,16 @@
+clear
+echo "enter the first file name"
+read f1
+echo "enter the secound file name"
+read f2
+p1=`ls -l $f1 | cut -c 2-10` 
+p2=`ls -l $f2 | cut -c 2-10`
+if [ $p1 = $p2 ]
+then
+echo "permissions are same"
+echo "$p1"
+else
+echo "permission of file is different"
+echo "permission are file1 $f1 is $p1"
+echo "permission of file2 $f2 is $p2"
+fi

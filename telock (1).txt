@@ -1,0 +1,29 @@
+clear
+trap " " 1 2 3 15 20
+echo "implemention of terminal lock"
+stty echo
+echo "enter the password"
+read pass1
+if [ -z pass1 ]
+then
+echo "invalid password"
+stty -echo
+exit
+else
+echo "retype password\c"
+read pass2
+if [ "$pass1" -eq "$pass2" ]
+then
+tput clear
+echo "terminal locked...\n to unlock
+enter password :\c"
+read pass3
+until [ "$pass3" -eq "$pass1" ]
+do
+read pass3
+done
+else
+echo "key dose not match"
+fi
+fi
+stty echo
